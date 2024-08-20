@@ -1,0 +1,154 @@
+/* 기본 스타일 설정 */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+/* 헤더 스타일 */
+header {
+    background: linear-gradient(45deg, #0073e6, #00aaff, #ff66ff);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    animation: headerAnimation 5s ease-in-out infinite;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    background: linear-gradient(90deg, #00aaff, #ff66ff, #00aaff);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: textGlow 5s ease-in-out infinite;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.2rem;
+}
+
+/* 섹션 스타일 */
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    opacity: 1; /* 초기 상태에서 내용이 보이도록 설정 */
+    transform: translateY(0); /* 초기 상태 */
+}
+
+section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.4);
+}
+
+section h2 {
+    margin-top: 0;
+    color: #ff66ff;
+    border-bottom: 2px solid #ff66ff;
+    padding-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+section h2:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff66ff, transparent);
+    animation: h2Underline 3s linear infinite;
+}
+
+@keyframes h2Underline {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+
+/* 리스트 스타일 */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+a {
+    color: #00aaff;
+    text-decoration: none;
+    position: relative;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ff66ff;
+}
+
+/* 스킬 섹션 그리드 스타일 */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill {
+    flex: 1;
+    min-width: 250px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3);
+    animation: skillFadeIn 1s ease forwards;
+    opacity: 1; /* 초기 상태에서 내용이 보이도록 설정 */
+    transition: background 0.3s ease;
+}
+
+.skill:hover {
+    background: rgba(255, 102, 255, 0.3);
+    color: #fff;
+}
+
+@keyframes skillFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 헤더 애니메이션 */
+@keyframes headerAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 텍스트 글로우 애니메이션 */
+@keyframes textGlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 푸터 스타일 */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
